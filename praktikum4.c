@@ -101,7 +101,7 @@ int main(void) {
             user_button_pressed = 1; // Taste gedrückt
             backlight_timer = 10000; // 10 Sekunden
             GPIOD->ODR |= (1 << 13); // PD13 (Orange LED & Hintergrundbeleuchtung) einschalten
-            if (loops >= 2){
+            if (loops >= 5){
                     GPIOD->ODR ^= (1 << 12); // PD12 (Grüne LED) einschalten
                     loops = 0;
             }
