@@ -1,4 +1,3 @@
-
 #include "stm32f4xx.h"          // Grundlegende STM32F4 Definitionen und Registerzugriff
 #include "_mcpr_stm32f407.h"    // Board-spezifische Funktionen und Einstellungen
 //#include "display.h"
@@ -19,9 +18,9 @@ void LCD_SetDimPercentage( uint8_t pcnt )
     {
         TIM4->CCR2 = 0; // PWM-Vergleichswert auf 0, Display aus
     } else if ( pcnt > 100 ) {
-        TIM4->CCR2 = 999; // Maximalwert: 100% Helligkeit
+        TIM4->CCR2 = 1000; // Maximalwert: 100% Helligkeit
     } else {
-        TIM4->CCR2  = (pcnt*10) - 1;    // PWM-Wert skalieren, 0 zählt mit
+        TIM4->CCR2  = (pcnt*10);    // PWM-Wert skalieren, 0 zählt mit
     }
 }
  
